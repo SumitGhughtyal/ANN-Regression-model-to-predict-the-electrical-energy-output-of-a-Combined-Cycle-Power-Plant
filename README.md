@@ -1,79 +1,39 @@
-Artificial Neural Network Project
-This repository contains the code and resources for building an Artificial Neural Network (ANN) using TensorFlow. The project focuses on predicting outcomes based on a given dataset, showcasing the complete process from data preprocessing to model training and evaluation.
+# Power Plant Energy Output Prediction using an Artificial Neural Network
 
-Table of Contents
-Project Overview
-Dataset
-Project Structure
-Installation
-Usage
-Results
-Contributing
-License
-Contact
-Project Overview
-This project implements a basic ANN model to predict target variables based on the provided features. The model is built with the following key components:
+This project is an implementation of an Artificial Neural Network (ANN) to solve a regression problem. The goal is to predict the net hourly electrical energy output (PE) of a combined cycle power plant.
 
-Data Preprocessing: Importing and preparing the dataset.
-Model Architecture: Designing an ANN with two hidden layers.
-Model Training: Training the model using the Adam optimizer and mean squared error loss.
-Prediction: Evaluating the model's performance on the test set.
-Dataset
-The dataset used in this project is Folds5x2_pp.xlsx, which includes various features relevant to the prediction task. The dataset is split into training and test sets for model training and evaluation.
+The model is built using TensorFlow's Keras API and trained on a dataset containing hourly average ambient variables.
 
-Project Structure
-The project is organized as follows:
+## Dataset
 
-bash
-Copy code
-├── ann_project/
-│   ├── data/
-│   │   └── Folds5x2_pp.xlsx  # Dataset file
-│   ├── notebooks/
-│   │   └── ann_model.ipynb   # Jupyter notebook for building and training the model
-│   ├── src/
-│   │   └── artificial_neural_network.py  # Main Python script for the ANN model
-│   ├── results/
-│   │   └── predictions.csv   # Model predictions on the test set
-│   ├── README.md             # Project README file
-│   └── requirements.txt      # Python dependencies
-Installation
-To run the project locally, follow these steps:
+The project uses the **Combined Cycle Power Plant** dataset, which is provided in the `Folds5x2_pp.xlsx` file. The dataset contains 9568 data points collected over a six-year period.
 
-Clone the repository:
-bash
-Copy code
-git clone https://github.com/your-username/ann_project.git
-Navigate to the project directory:
-bash
-Copy code
-cd ann_project
-Install the required dependencies:
-bash
-Copy code
-pip install -r requirements.txt
-Usage
-You can use the provided Python script or Jupyter notebook to build and train the ANN model:
+The features are:
+- **Ambient Temperature (AT)**
+- **Ambient Pressure (AP)**
+- **Relative Humidity (RH)**
+- **Exhaust Vacuum (V)**
 
-Run the Python script:
-bash
-Copy code
-python src/artificial_neural_network.py
-Alternatively, explore the model in the Jupyter notebook:
-bash
-Copy code
-jupyter notebook notebooks/ann_model.ipynb
-Results
-The trained model's predictions are stored in the results/predictions.csv file. The model's performance on the test set can be evaluated using various metrics, including mean squared error.
+The target variable is:
+- **Net hourly electrical energy output (PE)**
 
-Contributing
-Contributions are welcome! If you have any ideas, suggestions, or issues, please open an issue or submit a pull request.
+## Model Architecture
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+The ANN is a sequential model with the following structure:
+- **Input Layer**
+- **Two Hidden Layers:** Each with 6 neurons and the ReLU (Rectified Linear Unit) activation function.
+- **Output Layer:** A single neuron to predict the continuous value of PE.
 
-Contact
-For any inquiries or discussions, feel free to reach out:
+The model is compiled using the **Adam optimizer** and the **Mean Squared Error** loss function, which is suitable for regression tasks.
 
-LinkedIn
-Email
+## Requirements
+
+The project requires Python and the following libraries:
+- NumPy
+- Pandas
+- TensorFlow
+- Scikit-learn
+
+You can install the necessary libraries using pip:
+```bash
+pip install numpy pandas tensorflow scikit-learn openpyxl
