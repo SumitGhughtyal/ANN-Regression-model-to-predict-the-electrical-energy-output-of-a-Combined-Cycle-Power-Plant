@@ -37,3 +37,20 @@ The project requires Python and the following libraries:
 You can install the necessary libraries using pip:
 ```bash
 pip install numpy pandas tensorflow scikit-learn openpyxl
+````
+
+## How to Use
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone [https://github.com/your-username/power-plant-ann.git](https://github.com/your-username/power-plant-ann.git)
+    cd power-plant-ann
+    ```
+
+2.  **Ensure you have the dataset:**
+    Place the `Folds5x2_pp.xlsx` file in the root directory of the project.
+
+3.  **Run the script:**
+    Execute the Python script to train the model and see the predictions on the test set. The script will print a side-by-side comparison of the predicted values and the actual values.
+
